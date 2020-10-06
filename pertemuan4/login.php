@@ -7,7 +7,7 @@
 </head>
     <style>
     .inputan{
-        width: 100px;
+        width: 500px;
         padding: 12px 20px;
         margin: 8px 0;
         box-sizing: border-box;
@@ -25,11 +25,11 @@
 <body>
     <p>Login System</p>
     <form method="post" action="ceklogin.php">
-        <label >Username</label>
-        <input class="inputan" type="text" name="username">
-        <label >password</label>
-        <input class="inputan" type="password" name="password" >
-        <input type="submit" name="tombolsubmit" value="login">
+        <label >Username</label> <br>
+        <input class="inputan" type="text" name="username"> <br>
+        <label >password</label> <br>
+        <input class="inputan" type="password" name="password" > <br>
+        <input type="submit" name="tombolsubmit" value="Daftar">
     </form>    
 </body>
 </html>
