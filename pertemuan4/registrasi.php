@@ -7,7 +7,7 @@
 </head>
     <style>
     .inputan{
-        width: 500px;
+        width: 100px;
         padding: 12px 20px;
         margin: 8px 0;
         box-sizing: border-box;
