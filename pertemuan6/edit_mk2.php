@@ -6,7 +6,7 @@
     <title>Registrasi Mata Kuliah</title>
     <!-- CSS only -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-
+    
 </head>
 <body>
     <?php   
@@ -14,7 +14,7 @@
     include_once "koneksi.php"; 
     $status = 2;  
     if (isset($_POST['kodemk'])) {
-
+        
         $kodemk = $_POST['kodemk'];
         $namamk = $_POST['namamk'];
         $kategori = $_POST['kategori'];
@@ -23,7 +23,7 @@
          //buat koneksi
          $strsql = "INSERT INTO matakuliah (kodemk, namamk, kategori, sks) 
          VALUES ('$kodemk','$namamk','$kategori','$sks')";
-
+         
          $runSQL = mysqli_query($conn,$strsql);        
          if ($runSQL) {
              $status = 1; //sukses
@@ -114,20 +114,20 @@
             </div>
         <?php 
             }
-
+        
         ?>
         <form id="myform" method="post" action="registrasi_mk2.php">
             <div class="form-group">
                 <label>Kode Mata Kuliah</label>
-                <input id="kodemk" class="form-control" type="text" name="kodemk" value="<?php echo $_kodemk ?>" readonly <?php echo $jngiseng ?>>
+                <input id="kodemk" class="form-control" type="text" name="kodemk" value="<?php echo $_kodemk ?>">
             </div>
             <div class="form-group">
                 <label>Nama Mata Kuliah</label>
-                <input id="namamk" class="form-control" type="text" name="namamk" value="<?php echo $_namamk ?>" <?php echo $jngiseng ?>>
+                <input id="namamk" class="form-control" type="text" name="namamk" value="<?php echo $_namamk ?>">
             </div>
             <div class="form-group">
                 <label>Kategori Mata Kuliah</label>
-                <select id="kategori" name="kategori" class="form-control" <?php echo $jngiseng ?>>
+                <select id="kategori" name="kategori" class="form-control">
                 <option value="pilih">Pilih</option>
                 <option value="MKMA">Mata Kuliah Major</option>
                 <option value="MKMI">Mata Kuliah Minor</option>
@@ -136,11 +136,11 @@
             </div>
             <div class="form-group">
                 <label>SKS</label>
-                <input id="sks" class="form-control" type="text" name="sks" value="<?php echo $_sks ?>" <?php echo $jngiseng ?>>
+                <input id="sks" class="form-control" type="text" name="sks" value="<?php echo $_sks ?>">
             </div>           
-                <input class="btn btn-primary" type="button" id="tombol" value="Simpan" <?php echo $jngiseng ?>>   
+                <input class="btn btn-primary" type="button" id="tombol" value="Simpan">   
         </form>
-
+        
     </div>
     <?php 
     include_once "footer.php";
@@ -165,14 +165,14 @@
             $('#nmmk').text(namamk);
             $('#kat').text(kategori);
             $('#sksmk').text(sks);
-
+         
             //buka modal
             $('#pesan').modal({
                 show: true
             });
         });
     });
-
+    
     </script>
 </body>
 </html>
