@@ -21,34 +21,36 @@
     <body id="page-top">
         <!-- Navigation-->
         <?php 
-      include_once "header.php";
-    ?>
+          include_once "header.php";
+          include_once "koneksi.php";
+        ?>
           <section class="page-section bg-light" id="gallery">
             <div class="container">
                 <div class="text-center">
-                    <h2 class="section-heading text-uppercase kuning">Gallery</h2>
+                    <h2 class="section-heading text-uppercase putih">Gallery</h2>
                     <h3 class="section-subheading text-muted">Koleksi Foto Nino</h3>
                 </div>
                 <div class="w3-row-padding" style="margin-bottom:128px">
-  <div class="w3-half">
-    <img src="./assets/img/nino.jpg" style="width:100%">
-    <img src="./assets/img/nino.jpg" style="width:100%">
-    <img src="./assets/img/nino.jpg" style="width:100%">
-    <img src="./assets/img/nino.jpg" style="width:100%">
-    <img src="./assets/img/nino.jpg" style="width:100%">
-    <img src="./assets/img/nino.jpg" style="width:100%">
-    <img src="./assets/img/nino.jpg" style="width:100%">
-  </div>
+            <div class="row">
+            <?php
+              $strSQL = "SELECT * FROM gallery";
+              $runStrSQL = mysqli_query($conn,$strSQL);
+              $jmlRowData = mysqli_num_rows($runStrSQL);
+              if ($jmlRowData < 0) {   
+              }
+              else {
+                while($row = mysqli_fetch_assoc($runStrSQL)) {
+            ?>
+              <div class="col-sm-6">
+                <img src="./<?php echo $row["gambar"]?>" style="width:100%">
+              </div>
+              
 
-  <div class="w3-half">
-    <img src="./assets/img/nino.jpg" style="width:100%">
-    <img src="./assets/img/nino.jpg" style="width:100%">
-    <img src="./assets/img/nino.jpg" style="width:100%">
-    <img src="./assets/img/nino.jpg" style="width:100%">
-    <img src="./assets/img/nino.jpg" style="width:100%">
-    <img src="./assets/img/nino.jpg" style="width:100%">
-  </div>
-</div>
+            <?php
+                }
+              }
+            ?>
+            </div>
             </div>
         </section>
     <!-- Footer-->

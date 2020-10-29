@@ -62,7 +62,9 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
   background-size: cover;
   min-height: 75%;
 }
-
+.hitam{
+  background-color: black;
+}
 .w3-row-padding img {
   margin-bottom: 12px
 }
@@ -185,7 +187,7 @@ a:hover {
   text-decoration: underline;
 }
 .akuning {
-  color: #fed136;
+  color: #fff;
   text-decoration: none;
   background-color: transparent;
 }
@@ -195,7 +197,7 @@ a:hover {
   background-color: transparent;
 }
 .akuning:hover {
-  color: #fed136;
+  color: #fff;
   text-decoration: underline;
 }
 a:not([href]) {
@@ -10467,12 +10469,7 @@ header.masthead .masthead-heading {
   margin-bottom: 0;
 }
 
-section#contact {
-  background-color: #212529;
-  background-image: url("../assets/img/nino.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-}
+
 section#contact .section-heading {
   color: #fff;
 }

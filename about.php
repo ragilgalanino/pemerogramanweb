@@ -25,15 +25,25 @@
         <!-- Navigation-->
         <?php 
       include_once "header.php";
+      include_once "koneksi.php";
+    ?>
+    <?php
+    $strSQL = "SELECT * FROM about";
+    $runStrSQL = mysqli_query($conn,$strSQL);
+    $jmlRowData = mysqli_num_rows($runStrSQL);
+    if ($jmlRowData < 0) {   
+    }
+    else {
+      while($row = mysqli_fetch_assoc($runStrSQL)) {
     ?>
         <section class="page-section bg-light" id="about">
             <div class="container">
                 <div class="text-center">
-                    <h2 class="section-heading text-uppercase kuning">About Me</h2>
+                    <h2 class="section-heading text-uppercase putih">About Me</h2>
                     <h3 class="section-subheading text-muted"></h3>
                 </div>
                 <div class="bgimg w3-display-container" id="home">
-                  <img src="./assets/img/nino.jpg" style="width:100%">
+                  <img src="./<?php echo $row["gambar"] ?>" style="width:100%">
                     <div class="w3-display-bottomleft w3-center w3-padding-large w3-hide-small">
                         <span class="w3-tag">14 April 2000</span>
                     </div>
@@ -47,11 +57,15 @@
             </div>
             <div class="w3-container">
                 <div class="w3-content putih" style="max-width:700px">
-                    <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide tag-putih">TENTANG SAYA</span></h5>
-                    <p>Saya merupakan lulusan dari sma negeri di tangerang selatan.</p>
+                    <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide tag-putih"><?php echo $row["judul"] ?></span></h5>
+                    <p><?php echo $row["isi"] ?></p>
                 </div>
             </div>
         </section>
+        <?php
+      }
+    }
+        ?>
     <!-- Footer-->
         <?php 
       include_once "footer.php";
