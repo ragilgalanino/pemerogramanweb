@@ -42,7 +42,7 @@
                 while($row = mysqli_fetch_assoc($runStrSQL)) {
             ?>
               <div class="col-sm-6">
-                <img src="./<?php echo $row["gambar"]?>" style="width:100%">
+                <img src="./assets/img/<?php echo $row["gambar"]?>" style="width:100%">
               </div>
               
 
