@@ -131,6 +131,7 @@
             </div>
                      
                 <input class="btn btn-dark" type="button" id="tombol" value="Simpan">   
+                <a href="portofolio.php" class="btn btn-danger">Kembali</a>
         </form>
         
     </div>

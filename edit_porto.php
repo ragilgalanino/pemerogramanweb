@@ -158,6 +158,7 @@
                 <input id="isi" class="form-control" type="text" name="isi" value="<?php echo $isi?>" <?php echo $disableForm ?>>
             </div>             
                 <input class="btn btn-dark" type="button" id="tombol1" value="Simpan" <?php echo $disableForm ?>>   
+                <a href="portofolio.php" class="btn btn-danger">Kembali</a>
         </form>
         
     </div>
