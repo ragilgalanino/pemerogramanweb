@@ -89,12 +89,11 @@
                                     <!-- Project Details Go Here-->
                                     <h2 class="text-uppercase"><?php echo $row["judul"]?></h2>
                                     <p class="item-intro text-muted"><?php echo $row["subjudul"]?></p>
-                                    <img class="img-fluid d-block mx-auto" src="<?php echo $row["gambar"]?>" alt="" />
+                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/<?php echo $row["gambar"]?>" alt="" />
                                     <p><?php echo $row["isi"]?></p>
-                                    <button class="btn btn-dark" data-dismiss="modal" type="button">
-                                        <i class="fas fa-times mr-1"></i>
-                                        Close Project
-                                    </button>
+                                    <div class="text-center">
+                                        <a href="edit_porto.php?id_porto=<?php echo $row["id_porto"] ?>" class="btn btn-dark btn-xl text-uppercase"><i class="fa fa-edit"></i>Edit</a>                                
+                                    </div>
                                 </div>
                             </div>
                         </div>

@@ -31,7 +31,7 @@
                     <!-- footer -->
                     <div class="modal-footer">
                         <button type="button" class="btn btn-info" data-dismiss="modal">Edit</button>
-                        <button id="proses" type="button" class="btn btn-primary" data-dismiss="modal">Submit</button>
+                        <button id="proses" type="button" class="btn btn-dark" data-dismiss="modal">Submit</button>
                     </div>
                 </div>
             </div>

@@ -43,7 +43,7 @@
                     <h3 class="section-subheading text-muted"></h3>
                 </div>
                 <div class="bgimg w3-display-container" id="home">
-                  <img src="./<?php echo $row["gambar"] ?>" style="width:100%">
+                  <img src="./assets/img/<?php echo $row["gambar"] ?>" style="width:100%">
                     <div class="w3-display-bottomleft w3-center w3-padding-large w3-hide-small">
                         <span class="w3-tag">14 April 2000</span>
                     </div>
@@ -61,6 +61,8 @@
                     <p><?php echo $row["isi"] ?></p>
                 </div>
             </div>
+            <br>
+            <br>
             <div class="text-center">
                     <a href="edit_about.php?id=<?php echo $row["id"] ?>" class="btn btn-dark btn-xl text-uppercase"><i class="fa fa-edit"></i>Edit</a>
              </div>
