@@ -22,17 +22,14 @@
     <?php   
     include_once "koneksi.php"; 
     $status = 2;  
-    if (isset($_POST['id_porto'])) {
+    if (isset($_POST['id_gambar'])) {
 
-        $id_porto = $_POST['id_porto']; 
+        $id_gambar = $_POST['id_gambar']; 
         $gambar = $_POST['gambar'];
-        $judul = $_POST['judul'];
-        $subjudul = $_POST['subjudul'];
-        $isi = $_POST['isi'];
 
          //buat koneksi
-         $strsql = "INSERT INTO portofolio (id_porto, gambar, judul, subjudul, isi) 
-         VALUES ('$id_porto','$gambar','$judul','$subjudul','$isi')";
+         $strsql = "INSERT INTO gallery (id_gambar, gambar) 
+         VALUES ('$id_gambar','$gambar')";
          
          $runSQL = mysqli_query($conn,$strsql);        
          if ($runSQL) {
@@ -41,11 +38,11 @@
          else {
              $status = 0; //tidak sukses;
          }    
-         header("refresh:3; url=portofolio.php");    
+         header("refresh:3; url=gallery.php");    
     }            
     ?>
     <div class="container">
-        <h2>Tambah Portofolio</h2>   
+        <h2>Tambah Gambar</h2>   
             <!-- Ini Modal -->
             <div class="modal" id="pesan">
                         <div class="modal-dialog">
@@ -65,18 +62,6 @@
                                         <div class="row">
                                             <div class="col-6"><b>Gambar</b></div>
                                             <div class="col-6"><span id="gbr"></span></div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-6"><b>Judul</b></div>
-                                            <div class="col-6"><span id="jdl"></span></div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-6"><b>SubJudul</b></div>
-                                            <div class="col-6"><span id="sjdl"></span></div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-6"><b>isi</b></div>
-                                            <div class="col-6"><span id="isis"></span></div>
                                         </div>
                                     </div>
                                 </div>
@@ -108,26 +93,14 @@
             }
         
         ?>
-        <form id="myform" method="post" action="tambah_porto.php">
+        <form id="myform" method="post" action="tambah_gambar.php">
         <div class="form-group">
                 <label>id</label>
-                <input id="id_porto" class="form-control" type="text" name="id_porto" readonly>
+                <input id="id_gambar" class="form-control hidden" type="text" name="id_gambar" readonly>
             </div>
             <div class="form-group">
                 <label>gambar</label>
                 <input id="gambar" class="form-control" type="text" name="gambar">
-            </div>
-            <div class="form-group">
-                <label>Judul</label>
-                <input id="judul" class="form-control" type="text" name="judul">
-            </div>
-            <div class="form-group">
-                <label>subjudul</label>
-                <input id="subjudul" class="form-control" type="text" name="subjudul">
-            </div>
-            <div class="form-group">
-                <label>isi</label>
-                <input id="isi" class="form-control" type="text" name="isi">
             </div>
                      
                 <input class="btn btn-dark" type="button" id="tombol" value="Simpan">   
@@ -148,17 +121,11 @@
         });
         $('#tombol').click(function(){
             //ambil data dari form
-            const id_porto = $('#id_porto').val();
+            const id_gambar = $('#id_gambar').val();
             const gambar = $('#gambar').val();
-            const judul = $('#judul').val();
-            const subjudul = $('#subjudul').val();
-            const isi = $('#isi').val();
-
-            $('#idd').text(id_porto);
+            
+            $('#idd').text(id_gambar);
             $('#gbr').text(gambar);
-            $('#jdl').text(judul);
-            $('#sjdl').text(subjudul);
-            $('#isis').text(isi);
             
             //buka modal
             $('#pesan').modal({

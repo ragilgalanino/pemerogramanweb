@@ -43,7 +43,7 @@
                  ?>
                     <div class="col-lg-4 col-sm-6 mb-4">
                         <div class="portfolio-item">
-                            <a class="portfolio-link" data-toggle="modal" href="#<?php echo $row["judul"]?>">
+                            <a class="portfolio-link" data-toggle="modal" href="#porto<?php echo $row["id_porto"]?>">
                                 <div class="portfolio-hover">
                                     <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                                 </div>
@@ -78,7 +78,7 @@
     else {
       while($row = mysqli_fetch_assoc($runStrSQL)) {
     ?>
-        <div class="portfolio-modal modal fade" id="<?php echo $row["judul"]?>" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="portfolio-modal modal fade" id="porto<?php echo $row["id_porto"]?>" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="close-modal" data-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
