@@ -42,7 +42,7 @@
                     <h2 class="section-heading text-uppercase putih">About Me</h2>
                     <h3 class="section-subheading text-muted"></h3>
                 </div>
-                <div class="bgimg w3-display-container" id="home">
+                <div class="bgimg w3-display-container w3-grayscale-min" id="home">
                   <img src="./assets/img/<?php echo $row["gambar"] ?>" style="width:100%">
                     <div class="w3-display-bottomleft w3-center w3-padding-large w3-hide-small">
                         <span class="w3-tag">14 April 2000</span>

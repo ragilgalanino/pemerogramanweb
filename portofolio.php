@@ -47,7 +47,7 @@
                                 <div class="portfolio-hover">
                                     <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                                 </div>
-                                <img class="img-fluid" src="assets/img/portfolio/<?php echo $row["gambar"] ?>" alt="" />
+                                <img class="img-fluid" height="300" width="400" src="assets/img/portfolio/<?php echo $row["gambar"] ?>" alt="" />
                             </a>
                             <div class="portfolio-caption">
                                 <div class="portfolio-caption-heading"><?php echo $row["judul"] ?></div>
@@ -59,7 +59,9 @@
                 }
             }
                 ?>
-
+            </div>
+            <div class="text-center">
+              <a href="tambah_porto.php" class="btn btn-dark btn-xl text-uppercase"><i></i>Tambah Portofolio</a>                                
             </div>
         </section>
         <!-- Footer-->
@@ -93,6 +95,7 @@
                                     <p><?php echo $row["isi"]?></p>
                                     <div class="text-center">
                                         <a href="edit_porto.php?id_porto=<?php echo $row["id_porto"] ?>" class="btn btn-dark btn-xl text-uppercase"><i class="fa fa-edit"></i>Edit</a>                                
+                                        <a href="hapus_porto.php?id_porto=<?php echo $row["id_porto"] ?>" class="btn btn-danger btn-xl text-uppercase"> <i class="fa fa-trash"></i>Hapus</a>
                                     </div>
                                 </div>
                             </div>

@@ -43,7 +43,7 @@
             ?>
               <div class="col-sm-6">
               <a class="portfolio-link" data-toggle="modal" href="#gambar<?php echo $row["id_gambar"]?>">
-                <img src="./assets/img/<?php echo $row["gambar"]?>" style="width:100%">
+                <img src="./assets/img/gallery/<?php echo $row["gambar"]?>" style="width:100%">
                </a> 
               </div>
               
@@ -77,8 +77,8 @@
                             <div class="col-lg-8">
                                 <div class="modal-body">
                                     <!-- Project Details Go Here-->
-                                    <img class="img-fluid d-block mx-auto" src="./assets/img/<?php echo $row["gambar"]?>" alt="" />
-                                    <a href="hapus_gambar.php?id_gambar=<?php echo $row["id_gambar"] ?>" class="btn btn-danger"> <i class="fa fa-trash"></i>Hapus</a>
+                                    <img class="img-fluid d-block mx-auto" src="./assets/img/gallery/<?php echo $row["gambar"]?>" alt="" />
+                                    <a href="hapus_gambar.php?id_gambar=<?php echo $row["id_gambar"] ?>" class="btn btn-danger btn-xl text-uppercase"> <i class="fa fa-trash"></i>Hapus</a>
                                     </div>
                                 </div>
                             </div>
