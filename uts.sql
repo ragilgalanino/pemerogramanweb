@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 30, 2020 at 11:07 AM
+-- Generation Time: Nov 02, 2020 at 06:11 AM
 -- Server version: 10.1.28-MariaDB
 -- PHP Version: 7.1.11
 
@@ -40,7 +40,7 @@ CREATE TABLE `about` (
 --
 
 INSERT INTO `about` (`id`, `gambar`, `judul`, `isi`) VALUES
-(1, 'nins.jpg', 'About Me', 'Kelas satu berlalu dan lanjut kelas dua. Saat kelas dua SMA itu merupakan masa terseru pada jenjang SMA. Kebetulan saya memiliki lingkungan pertemanan yang baik karena kami saat itu terpikir untuk membuat suatu sebelum lulus. Saya membicarakan acara tersebut dengan teman-teman saya yang berbeda kelas dengan saya. Kami sepakat untuk membuat acara itu walaupun resiko ditolak sekolah sangat tinggi.\r\nAwal kami membuat panitia hanya dua belas orang saja yang berposisi sebagai ketua setiap divisi. Saat ingin mengajukan proposal kesekolah untuk pertama kali kami langsung ditolak mentah-mentah dengan seribu alasan. Namun kami tetap ingin menjalankan acara tersebut dan tetap mencari panitia dari angkatan yang lebih muda. Walaupun acara kami belum disetujui oleh pihak sekolah tetapi kami tetap yakin kalau acara kami akan berjalan lancar. \r\nSaat semua divisi sudah terisi oleh panitia kami kembali menyerahkan proposal kepada pihak sekolah namun pihak sekolah masih tidak mau menerima karena dengan alesan biaya. Saya dan para ketua panitia mendesak pihak sekolah agar segera menyetujui acara kami karena tanpa persetujuan dari sekolah kami tidak bisa mencari sponsor untuk acara kami. Tetapi pihak sekolah tetap tidak mau menyutujui acara kami sampai akhirnya sekolah meminta tenggat waktu pengumpulan biaya selama tiga bulan. Kamipun menyetujui tenggat waktu tersebut. Tapi kami juga meminta sekolah untuk memperbaiki lapangan sekolah kami karena keadaannya sudah tidak layak untuk dijadikan lapangan perlombaan.\r\n');
+(1, 'nins.jpg', 'About MeTes', 'Kelas satu berlalu dan lanjut kelas dua. Saat kelas dua SMA itu merupakan masa terseru pada jenjang SMA. Kebetulan saya memiliki lingkungan pertemanan yang baik karena kami saat itu terpikir untuk membuat sesuatu sebelum lulus. Saya membicarakan acara tersebut dengan teman-teman saya yang berbeda kelas dengan saya. Kami sepakat untuk membuat acara itu walaupun resiko ditolak sekolah sangat tinggi.Awal kami membuat panitia hanya dua belas orang saja yang berposisi sebagai ketua setiap divisi. Saat ingin mengajukan proposal kesekolah untuk pertama kali kami langsung ditolak mentah-mentah dengan seribu alasan. Namun kami tetap ingin menjalankan acara tersebut dan tetap mencari panitia dari angkatan yang lebih muda. Walaupun acara kami belum disetujui oleh pihak sekolah tetapi kami tetap yakin kalau acara kami akan berjalan lancar. Saat semua divisi sudah terisi oleh panitia kami kembali menyerahkan proposal kepada pihak sekolah namun pihak sekolah masih tidak mau menerima karena dengan alesan biaya. Saya dan para ketua panitia mendesak pihak sekolah agar segera menyetujui acara kami karena tanpa persetujuan dari sekolah kami tidak bisa mencari sponsor untuk acara kami. Tetapi pihak sekolah tetap tidak mau menyutujui acara kami sampai akhirnya sekolah meminta tenggat waktu pengumpulan biaya selama tiga bulan. Kamipun menyetujui tenggat waktu tersebut. Tapi kami juga meminta sekolah untuk memperbaiki lapangan sekolah kami karena keadaannya sudah tidak layak untuk dijadikan lapangan perlombaan.');
 
 -- --------------------------------------------------------
 
@@ -97,6 +97,26 @@ INSERT INTO `gallery` (`gambar`, `id_gambar`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `home`
+--
+
+CREATE TABLE `home` (
+  `id` int(11) NOT NULL,
+  `gambar` text NOT NULL,
+  `judul` varchar(50) NOT NULL,
+  `subjudul` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `home`
+--
+
+INSERT INTO `home` (`id`, `gambar`, `judul`, `subjudul`) VALUES
+(1, 'nino.jpg', 'Portofolio Nino Arsyad', 'Selamat Datang di');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `portofolio`
 --
 
@@ -115,9 +135,8 @@ CREATE TABLE `portofolio` (
 INSERT INTO `portofolio` (`gambar`, `judul`, `subjudul`, `isi`, `id_porto`) VALUES
 ('forka.jpg', 'Forka Fest', 'Tahun 2018', 'Acara prodi yang banyak drama', 2),
 ('nino.jpg', 'Moonzer Cup', 'Tahun 2018', 'Udah gak demam panggung lagi soalnya gak terlalu rame', 4),
-('fusion.jpg', 'Fusion Cup 2017', 'Tahun 2017', 'Ini merupakan pengalam pertama saya menjalankan acara', 5),
-('inrab.jpg', 'Inrab Cup', 'Tahun 2017', 'Pertama kali lomba band', 6),
-('juara.jpg', 'Juara Futsal', 'Tahun 2018', 'Juara futsal yang sangat dramatis', 7),
+('fusion.jpg', 'Fusion Cup 2017', 'Tahun 2017', 'Ini merupakan pengalaman pertama saya menjalankan acara', 5),
+('juara.jpg', 'Juara Futsal', 'Tahun 2018', 'Juara futsal yang sangat dramatis ashiap', 7),
 ('logo.jpg', 'Tongkrongin', 'Tahun 2019', 'Aplikasi mobile pertama saya', 8);
 
 --
@@ -143,6 +162,12 @@ ALTER TABLE `gallery`
   ADD PRIMARY KEY (`id_gambar`);
 
 --
+-- Indexes for table `home`
+--
+ALTER TABLE `home`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `portofolio`
 --
 ALTER TABLE `portofolio`
@@ -163,6 +188,12 @@ ALTER TABLE `contact`
 --
 ALTER TABLE `gallery`
   MODIFY `id_gambar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+
+--
+-- AUTO_INCREMENT for table `home`
+--
+ALTER TABLE `home`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `portofolio`

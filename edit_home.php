@@ -12,13 +12,13 @@ include_once "head.php";
         $id = $_POST['id']; 
         $gambar = $_POST['gambar'];
         $judul = $_POST['judul'];
-        $isi = $_POST['isi'];
+        $subjudul = $_POST['subjudul'];
 
          //buat koneksi
-         $strSQL = "UPDATE about SET 
+         $strSQL = "UPDATE home SET 
          gambar='".$gambar."', 
          judul='".$judul."',
-         isi='".$isi."' WHERE id='".$id."'";
+         subjudul='".$subjudul."' WHERE id='".$id."'";
         // echo $strSQL;
        // die;
          $runSQL = mysqli_query($conn,$strSQL);        
@@ -28,18 +28,18 @@ include_once "head.php";
          else {
              $status = 0; //tidak sukses;
          }      
-         header("refresh:3; url=admin_about.php"); 
+         header("refresh:3; url=admin_index.php"); 
     }        
     else if (isset($_GET['id'])) {
         $id = $_GET['id'];
-        $strSQL = "SELECT * FROM about WHERE id='".$id."'";
+        $strSQL = "SELECT * FROM home WHERE id='".$id."'";
         $runStrSQL = mysqli_query($conn,$strSQL);
         $jmlRowData = mysqli_num_rows($runStrSQL);
         if ($jmlRowData > 0) {
             while ($row = mysqli_fetch_assoc($runStrSQL)) {
                 $gambar = $row["gambar"];
                 $judul = $row["judul"];
-                $isi = $row["isi"];
+                $subjudul = $row["subjudul"];
             }
         }
     }  
@@ -74,7 +74,7 @@ include_once "head.php";
             }
         
         ?>
-        <form id="myform" method="post" action="edit_about.php">
+        <form id="myform" method="post" action="edit_home.php">
             <div class="form-group">
                 <label>id</label>
                 <input id="id" class="form-control" type="text" name="id" value="<?php echo $id ?>" readonly 
@@ -82,18 +82,18 @@ include_once "head.php";
             </div>
             <div class="form-group">
                 <label>gambar</label>
-                <input id="gambar" class="form-control" type="text" name="gambar" value="<?php echo $gambar?>" <?php echo $disableForm ?>>
+                <input id="gambar" class="form-control" type="text" name="gambar" value="<?php echo $gambar?>" readonly <?php echo $disableForm ?>>
             </div>
             <div class="form-group">
                 <label>judul</label>
                 <input id="judul" class="form-control" type="text" name="judul" value="<?php echo $judul?>" <?php echo $disableForm ?>>
             </div>  
             <div class="form-group">
-                <label>isi</label>
-                <input id="isi" class="form-control" type="text" name="isi" value="<?php echo $isi?>" <?php echo $disableForm ?>>
+                <label>subjudul</label>
+                <input id="subjudul" class="form-control" type="text" name="subjudul" value="<?php echo $subjudul?>" <?php echo $disableForm ?>>
             </div>             
                 <input class="btn btn-dark" type="button" id="tombol" value="Simpan" <?php echo $disableForm ?>>   
-                <a href="admin_about.php" class="btn btn-danger">Kembali</a>
+                <a href="admin_index.php" class="btn btn-danger">Kembali</a>
         </form>
         
     </div>
@@ -114,12 +114,12 @@ include_once "head.php";
             const id = $('#id').val();
             const gambar = $('#gambar').val();
             const judul = $('#judul').val();
-            const isi = $('#isi').val();
+            const subjudul = $('#subjudul').val();
 
             $('#idd').text(id);
             $('#gbr').text(gambar);
             $('#jdl').text(judul);
-            $('#isis').text(isi);
+            $('#subjuduls').text(subjudul);
          
             //buka modal
             $('#pesan').modal({

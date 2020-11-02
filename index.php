@@ -7,14 +7,28 @@ include_once "head.php";
         <!-- Navigation-->
         <?php 
       include_once "header.php";
+      include_once "koneksi.php";
     ?>
         <!-- Masthead-->
-        <header class="masthead">
+        <header class="masthead"> 
+        <?php
+              $strSQL = "SELECT * FROM home";
+              $runStrSQL = mysqli_query($conn,$strSQL);
+              $jmlRowData = mysqli_num_rows($runStrSQL);
+              if ($jmlRowData < 0) {   
+              }
+              else {
+                while($row = mysqli_fetch_assoc($runStrSQL)) {
+            ?>
             <div class="container">
-                <div class="masthead-subheading">Selamat Datang di</div>
-                <div class="masthead-heading text-uppercase"> Portofolio Nino Arsyad</div>
-            </div>
+                <div class="masthead-subheading"><?php echo $row["subjudul"]?></div>
+                <div class="masthead-heading text-uppercase"> <?php echo $row["judul"]?></div>
+            </div>          
         </header>
+        <?php
+                }
+            }
+            ?>
         <!-- Footer-->
         <?php 
       include_once "footer.php";
