@@ -6,7 +6,7 @@ include_once "head.php";
     <body id="page-top">
         <!-- Navigation-->
         <?php 
-          include_once "header.php";
+          include_once "admin_header.php";
           include_once "koneksi.php";
         ?>
           <section class="page-section bg-light" id="gallery">
@@ -40,6 +40,9 @@ include_once "head.php";
             
             </div>
             </div>
+            <div class="text-center">
+              <a href="tambah_gambar.php" class="btn btn-dark btn-xl text-uppercase"><i></i>Tambah Gambar</a>                                
+            </div>
         </section>
         <?php
         $strSQL = "SELECT * FROM gallery";
@@ -60,6 +63,7 @@ include_once "head.php";
                                 <div class="modal-body">
                                     <!-- Project Details Go Here-->
                                     <img class="img-fluid d-block mx-auto" src="./assets/img/gallery/<?php echo $row["gambar"]?>" alt="" />
+                                    <a href="hapus_gambar.php?id_gambar=<?php echo $row["id_gambar"] ?>" class="btn btn-danger btn-xl text-uppercase"> <i class="fa fa-trash"></i>Hapus</a>
                                     </div>
                                 </div>
                             </div>

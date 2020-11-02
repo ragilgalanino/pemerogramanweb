@@ -11,7 +11,7 @@ if (isset($_GET['id_porto'])) {
     $runSQL = mysqli_query($conn, $strsql);
 
     if ($runSQL) {
-        header('Location: portofolio.php');
+        header('Location: admin_portofolio.php');
     } else {
         die("gagal menghapus...");
     }

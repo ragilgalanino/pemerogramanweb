@@ -6,7 +6,7 @@ include_once "head.php";
     <body id="page-top">
         <!-- Navigation-->
         <?php 
-      include_once "header.php";
+      include_once "admin_header.php";
       include_once "koneksi.php";
     ?>
         <!-- Portfolio Grid-->
@@ -45,6 +45,9 @@ include_once "head.php";
             }
                 ?>
             </div>
+            <div class="text-center">
+              <a href="tambah_porto.php" class="btn btn-dark btn-xl text-uppercase"><i></i>Tambah Portofolio</a>                                
+            </div>
         </section>
         <!-- Footer-->
         <?php 
@@ -75,6 +78,10 @@ include_once "head.php";
                                     <p class="item-intro text-muted"><?php echo $row["subjudul"]?></p>
                                     <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/<?php echo $row["gambar"]?>" alt="" />
                                     <p><?php echo $row["isi"]?></p>
+                                    <div class="text-center">
+                                        <a href="edit_porto.php?id_porto=<?php echo $row["id_porto"] ?>" class="btn btn-dark btn-xl text-uppercase"><i class="fa fa-edit"></i>Edit</a>                                
+                                        <a href="hapus_porto.php?id_porto=<?php echo $row["id_porto"] ?>" class="btn btn-danger btn-xl text-uppercase"> <i class="fa fa-trash"></i>Hapus</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>

@@ -30,7 +30,7 @@ include_once "head.php";
          else {
              $status = 0; //tidak sukses;
          }      
-         header("refresh:3; url=portofolio.php"); 
+         header("refresh:3; url=admin_portofolio.php"); 
     }        
     else if (isset($_GET['id_porto'])) {
         $id_porto = $_GET['id_porto'];
@@ -143,7 +143,7 @@ include_once "head.php";
                 <input id="isi" class="form-control" type="text" name="isi" value="<?php echo $isi?>" <?php echo $disableForm ?>>
             </div>             
                 <input class="btn btn-dark" type="button" id="tombol1" value="Simpan" <?php echo $disableForm ?>>   
-                <a href="portofolio.php" class="btn btn-danger">Kembali</a>
+                <a href="admin_portofolio.php" class="btn btn-danger">Kembali</a>
         </form>
         
     </div>

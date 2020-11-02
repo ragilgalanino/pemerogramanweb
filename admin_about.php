@@ -9,7 +9,7 @@ include_once "head.php";
     <body id="page-top">
         <!-- Navigation-->
         <?php 
-      include_once "header.php";
+      include_once "admin_header.php";
       include_once "koneksi.php";
     ?>
     <?php
@@ -48,7 +48,9 @@ include_once "head.php";
             </div>
             <br>
             <br>
-            
+            <div class="text-center">
+                    <a href="edit_about.php?id=<?php echo $row["id"] ?>" class="btn btn-dark btn-xl text-uppercase"><i class="fa fa-edit"></i>Edit</a>
+             </div>
         </section>
         <?php
       }

@@ -26,7 +26,7 @@ include_once "head.php";
          else {
              $status = 0; //tidak sukses;
          }    
-         header("refresh:3; url=portofolio.php");    
+         header("refresh:3; url=admin_portofolio.php");    
     }            
     ?>
     <div class="container">
@@ -116,7 +116,7 @@ include_once "head.php";
             </div>
                      
                 <input class="btn btn-dark" type="button" id="tombol" value="Simpan">   
-                <a href="portofolio.php" class="btn btn-danger">Kembali</a>
+                <a href="admin_portofolio.php" class="btn btn-danger">Kembali</a>
         </form>
         
     </div>

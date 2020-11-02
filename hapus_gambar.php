@@ -11,7 +11,7 @@ if (isset($_GET['id_gambar'])) {
     $runSQL = mysqli_query($conn, $strsql);
 
     if ($runSQL) {
-        header('Location: gallery.php');
+        header('Location: admin_gallery.php');
     } else {
         die("gagal menghapus...");
     }
